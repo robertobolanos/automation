@@ -55,11 +55,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EtsyGallery.cs" />
+    <Compile Include="EtsyPages\Cart.cs" />
+    <Compile Include="EtsyPages\EtsyHomePage.cs" />
     <Compile Include="MySel20Proj.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Suite2.cs" />
-    <Compile Include="Suite3.cs" />
+    <Compile Include="EtsyPages\ResultSearchPage.cs" />
+    <Compile Include="EtsyPages\GalleryPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

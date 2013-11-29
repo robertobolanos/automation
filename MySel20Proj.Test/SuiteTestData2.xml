@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rows>
+  <Test1>
+    <item>hat</item>
+    <expected>1</expected>
+  </Test1>
+  <Test1>
+    <item>hat</item>
+    <expected>1</expected>
+  </Test1>
+  <Test2>
+    <item>hat</item>
+  </Test2>
+  <Test2>
+    <item>hat</item>
+  </Test2>
+</Rows>

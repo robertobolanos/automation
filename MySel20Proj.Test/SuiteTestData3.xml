@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rows>
+  <Test1>
+    <item>hat</item>
+    <category>category_tags_vintage</category>
+  </Test1>
+  <Test1>
+    <item>hat</item>
+    <items>category_tags_vintage</items>
+  </Test1>
+  <Test2>
+    <item>ring</item>
+    <category>category_tags_jewelry.ring</category>
+  </Test2>
+  <Test2>
+    <item>ring</item>
+    <items>category_tags_jewelry.ring</items>
+  </Test2>
+</Rows>

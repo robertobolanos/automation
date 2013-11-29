@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace MySel20Proj.Test
 {
@@ -10,6 +11,14 @@ namespace MySel20Proj.Test
     {
 
         private IWebDriver driver;
+        
+        private TestContext context;
+
+        public TestContext TestContext
+        {
+            get { return context; }
+            set { context = value; }
+        }
 
         [TestInitialize]
         public void TestInitialize()
@@ -22,25 +31,41 @@ namespace MySel20Proj.Test
         {
             if (driver != null)
             {
-                //driver.Quit();
+                driver.Quit();
             }
         }
 
         [TestMethod]
+        [DeploymentItem("SuiteTestData3.xml")]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
+                   "SuiteTestData1.xml",
+                   "Test3",
+                    DataAccessMethod.Sequential)]
         public void TestMethod1()
         {
-            var page = new Suite3(this.driver);
-            page.SearchForAnItem("hat")
-                .SelectSubCategory("category_tags_vintage");
+            var item = (string)context.DataRow["item"];
+            var category = (string)context.DataRow["category"];
+            var page = PageFactory.InitElements<EtsyHomePage>(driver)
+                .Load()
+                .SearchForAnItem(item);
+            page.SelectSubCategory(category);
 
         }
 
         [TestMethod]
+        [DeploymentItem("SuiteTestData3.xml")]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML",
+                   "SuiteTestData3.xml",
+                   "Test2",
+                    DataAccessMethod.Sequential)]
         public void TestMethod2()
         {
-            var page = new Suite3(this.driver);
-            page.SearchForAnItem("ring")
-                .SelectSubCategory("category_tags_jewelry.ring");
+            var item = (string)context.DataRow["item"];
+            var category = (string)context.DataRow["category"];
+            var page = PageFactory.InitElements<EtsyHomePage>(driver)
+                .Load()
+                .SearchForAnItem(item);
+            page.SelectSubCategory(category);
 
         }
     }

@@ -39,6 +39,7 @@
       <HintPath>..\packages\Selenium.WebDriverBackedSelenium.2.37.0\lib\net40\Selenium.WebDriverBackedSelenium.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="ThoughtWorks.Selenium.Core">
       <HintPath>..\packages\Selenium.RC.2.37.0\lib\net40\ThoughtWorks.Selenium.Core.dll</HintPath>
@@ -69,6 +70,7 @@
     <Compile Include="SuiteTest3.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +78,20 @@
       <Project>{6b97aa39-193d-44d9-b95d-d42b9d3d2b61}</Project>
       <Name>MySel20Proj</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SuiteTestData3.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SuiteTestData2.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SuiteTestData1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

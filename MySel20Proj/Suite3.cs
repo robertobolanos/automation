@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -8,21 +9,13 @@ using System.Threading.Tasks;
 
 namespace MySel20Proj
 {
-    public class Suite3
+    public class Suite3 : LoadableComponent<Suite3>
     {
-        private IWebDriver driver;
+        private IWebDriver driver;       
 
         public Suite3(IWebDriver driver)
         {
             this.driver = driver;
-            driver.Navigate().GoToUrl("http://www.etsy.com");
-        }
-
-        public Suite3 SearchForAnItem(string item)
-        {
-            IWebElement query = driver.FindElement(By.Name("search_query"));
-            query.SendKeys(item);
-            return this;
         }
 
         public Suite3 SelectSubCategory(string category)
@@ -34,6 +27,16 @@ namespace MySel20Proj
             element.Click();
 
             return this;
+        }
+
+        protected override bool EvaluateLoadedStatus()
+        {
+            return driver.Url.Contains("www.etsy.com");
+        }
+
+        protected override void ExecuteLoad()
+        {
+            driver.Navigate().GoToUrl("http://www.etsy.com");
         }
     }
 }
